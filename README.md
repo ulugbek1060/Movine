@@ -6,7 +6,7 @@
 
 
 
-# MovieApp
+# Movie
 This project is a starting point for my first Flutter application.
 
 <p align="center">
