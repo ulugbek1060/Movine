@@ -1,0 +1,45 @@
+
+### GET Popular People
+GET {{baseUrl}}person/popular?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Person by id
+GET {{baseUrl}}person/287?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Person by query
+GET {{baseUrl}}search/person?language=en-US&page=1&query=Bred
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Person by query
+GET {{baseUrl}}person/287/images?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+/// Fetches Person by movie
+/// person/{id}/movie_credits?language=en-US&page=1
+
+/// Fetches Person by images
+/// person/{id}/images?language=en-US&page=1
+
+/// Fetches Person by translations
+/// person/{id}/translations?language=en-US&page=1
+
+/// Fetches Person by videos
+/// person/{id}/videos?language=en-US&page=1
+
+/// Fetches Person by similar
+/// person/{id}/similar?language=en-US&page=1
+
+/// Fetches Person by watch provider
+/// person/{id}/watch/providers?language=en-US&page=1
+
+/// Fetches Person by rating
+/// person/{id}/rating?language=en-US&page=1

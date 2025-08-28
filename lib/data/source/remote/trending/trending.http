@@ -1,0 +1,32 @@
+
+
+### GET Trending movies
+GET {{baseUrl}}trending/all/day?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Trending movies
+GET {{baseUrl}}trending/movie/week?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Trending persons
+GET {{baseUrl}}trending/person/day?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+/// Fetches Trending movies
+/// trending/all/day?language=en-US&page=1
+/// trending/all/week?language=en-US&page=1
+
+/// Fetches Trending Movies
+/// trending/movie/day?language=en-US&page=1
+/// trending/movie/week?language=en-US&page=1
+
+/// Fetches Trending People
+/// trending/person/day?language=en-US&page=1
+/// trending/person/week?language=en-US&page=1

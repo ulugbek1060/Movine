@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:movie_app/app/auth_bloc/authentication_bloc.dart';
 import 'package:movie_app/app/config_bloc/config_bloc.dart';
+import 'package:movie_app/l10n/app_localizations.dart';
 import 'package:movie_app/pages/initialpages/page/welcome_page.dart';
 import 'package:movie_app/pages/main/main_page.dart';
 import 'package:movie_app/pages/splash/splash_screen.dart';
 import 'package:movie_app/theme/app_theme.dart';
 import 'package:movies_data/movies_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class App extends StatefulWidget {
   final SharedPreferences sharedPref;

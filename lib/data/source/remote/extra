@@ -1,0 +1,7 @@
+
+When looking at the image methods there is a new field called file_type that will show you the original version of the asset that was uploaded. For SVG's, you should call the original image size since we don't resize them. If you prefer to grab PNG's, you can call any size you wish just like normal.
+Take for instance Netflix's logo (wwemzKWzjKYJFfCeiB57q3r4Bcm.svg), you can call any of the following:
+Example
+https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg
+https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.png
+https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png

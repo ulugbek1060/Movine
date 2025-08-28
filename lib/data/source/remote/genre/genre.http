@@ -1,0 +1,20 @@
+
+
+### GET Genre
+GET {{baseUrl}}genre/movie/list?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### GET Genre by id
+GET {{baseUrl}}genre/28/movies?language=en-US&page=1
+accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+  /// Fetches Genre
+  /// genre/movie/list?language=en-US&page=1
+
+  /// Fetches Genre by id
+  /// genre/{id}/movies?language=en-US&page=1
