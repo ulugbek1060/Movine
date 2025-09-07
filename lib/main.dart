@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:movie_app/core/config/app_provider.dart';
 import 'package:movie_app/core/theme/app_theme.dart';
 import 'package:movie_app/l10n/app_localizations.dart';
@@ -19,16 +20,12 @@ const collectionGenres = 'genres.box';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: '.env');
+  await dotenv.load();
 
-  final directory = await getApplicationDocumentsDirectory();
+  await Hive.initFlutter();
+
+
   final sharedPreferences = await SharedPreferences.getInstance();
-
-  final boxCollection = await BoxCollection.open(databaseName, {
-    collectionFavorites,
-    collectionGenres,
-  }, path: directory.path);
-
   runApp(
     ProviderScope(
       overrides: [

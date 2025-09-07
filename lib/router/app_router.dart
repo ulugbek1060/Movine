@@ -15,7 +15,6 @@ class AppRouter extends _$AppRouter {
   ];
 }
 
-// 4. Define your Route Classes (for passing arguments)
 // If you don't need to pass arguments, you don't need this class.
 // This tells auto_route what data the DetailsScreen expects.
 // @RoutePage()
