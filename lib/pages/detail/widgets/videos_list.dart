@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:movie_app/pages/detail/bloc/detail_movie_bloc.dart';
-// import 'package:movie_app/pages/videoplayer/player_page.dart';
-// import 'package:movie_app/pages/widgets/empty_view.dart';
-// import 'package:movie_app/pages/widgets/video_item_card.dart';
+// import 'package:movie_app/screens/detail/bloc/detail_movie_bloc.dart';
+// import 'package:movie_app/screens/videoplayer/player_page.dart';
+// import 'package:movie_app/screens/widgets/empty_view.dart';
+// import 'package:movie_app/screens/widgets/video_item_card.dart';
 //
 // class VideosList extends StatelessWidget {
 //   const VideosList({Key? key}) : super(key: key);

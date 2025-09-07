@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:movie_app/pages/detail/bloc/detail_movie_bloc.dart';
-// import 'package:movie_app/pages/widgets/empty_view.dart';
-// import 'package:movie_app/pages/widgets/movie_item_card.dart';
+// import 'package:movie_app/screens/detail/bloc/detail_movie_bloc.dart';
+// import 'package:movie_app/screens/widgets/empty_view.dart';
+// import 'package:movie_app/screens/widgets/movie_item_card.dart';
 // import 'package:movie_app/utils/sliver_grid_delegate.dart';
 //
 // class SimilarMoviesList extends StatelessWidget {

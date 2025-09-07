@@ -2,11 +2,11 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 // import 'package:internet_connection_checker/internet_connection_checker.dart';
-// import 'package:movie_app/pages/detail/detail_page.dart';
-// import 'package:movie_app/pages/widgets/error_view.dart';
-// import 'package:movie_app/pages/widgets/movie_item_card.dart';
-// import 'package:movie_app/pages/widgets/no_connection_view.dart';
-// import 'package:movie_app/pages/widgets/progress_view.dart';
+// import 'package:movie_app/screens/detail/detail_page.dart';
+// import 'package:movie_app/screens/widgets/error_view.dart';
+// import 'package:movie_app/screens/widgets/movie_item_card.dart';
+// import 'package:movie_app/screens/widgets/no_connection_view.dart';
+// import 'package:movie_app/screens/widgets/progress_view.dart';
 // import 'package:movie_app/utils/sliver_grid_delegate.dart';
 // import 'package:movies_data/movies_data.dart';
 //

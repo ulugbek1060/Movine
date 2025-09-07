@@ -1,11 +1,11 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:movie_app/pages/mylist/bloc/my_list_bloc.dart';
-// import 'package:movie_app/pages/widgets/empty_view.dart';
-// import 'package:movie_app/pages/widgets/error_view.dart';
-// import 'package:movie_app/pages/widgets/movie_item_card.dart';
-// import 'package:movie_app/pages/widgets/no_connection_view.dart';
-// import 'package:movie_app/pages/widgets/progress_view.dart';
+// import 'package:movie_app/screens/mylist/bloc/my_list_bloc.dart';
+// import 'package:movie_app/screens/widgets/empty_view.dart';
+// import 'package:movie_app/screens/widgets/error_view.dart';
+// import 'package:movie_app/screens/widgets/movie_item_card.dart';
+// import 'package:movie_app/screens/widgets/no_connection_view.dart';
+// import 'package:movie_app/screens/widgets/progress_view.dart';
 // import 'package:movie_app/utils/sliver_grid_delegate.dart';
 // import 'package:movie_app/utils/status.dart';
 // import 'package:movies_data/movies_data.dart';

@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-// import 'package:movie_app/pages/widgets/movie_item_card.dart';
-// import 'package:movie_app/pages/widgets/progress_view.dart';
+// import 'package:movie_app/screens/widgets/movie_item_card.dart';
+// import 'package:movie_app/screens/widgets/progress_view.dart';
 // import 'package:movie_app/utils/sliver_grid_delegate.dart';
 // import 'package:movies_data/movies_data.dart';
 //

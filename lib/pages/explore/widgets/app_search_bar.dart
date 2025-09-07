@@ -2,7 +2,7 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:iconly/iconly.dart';
 // import 'package:movie_app/l10n/l10n.dart';
-// import 'package:movie_app/pages/explore/bloc/explore_bloc.dart';
+// import 'package:movie_app/screens/explore/bloc/explore_bloc.dart';
 // import 'package:movie_app/theme/app_typography.dart';
 //
 // class AppSearchBar extends StatelessWidget {

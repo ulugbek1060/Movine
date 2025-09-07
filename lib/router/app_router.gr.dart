@@ -15,13 +15,13 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    GenresScreenRoute.name: (routeData) {
+    GenresRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const GenresScreen(),
       );
     },
-    WelcomeScreenRoute.name: (routeData) {
+    WelcomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const WelcomeScreen(),
@@ -32,28 +32,28 @@ abstract class _$AppRouter extends RootStackRouter {
 
 /// generated route for
 /// [GenresScreen]
-class GenresScreenRoute extends PageRouteInfo<void> {
-  const GenresScreenRoute({List<PageRouteInfo>? children})
+class GenresRoute extends PageRouteInfo<void> {
+  const GenresRoute({List<PageRouteInfo>? children})
       : super(
-          GenresScreenRoute.name,
+          GenresRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'GenresScreenRoute';
+  static const String name = 'GenresRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
 /// [WelcomeScreen]
-class WelcomeScreenRoute extends PageRouteInfo<void> {
-  const WelcomeScreenRoute({List<PageRouteInfo>? children})
+class WelcomeRoute extends PageRouteInfo<void> {
+  const WelcomeRoute({List<PageRouteInfo>? children})
       : super(
-          WelcomeScreenRoute.name,
+          WelcomeRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'WelcomeScreenRoute';
+  static const String name = 'WelcomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

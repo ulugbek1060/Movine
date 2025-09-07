@@ -36,4 +36,5 @@ class PagedMoviesEntity extends Equatable {
       results: results,
     );
   }
+
 }

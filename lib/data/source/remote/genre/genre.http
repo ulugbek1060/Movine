@@ -1,7 +1,7 @@
 
 
 ### GET Genre
-GET {{baseUrl}}genre/movie/list?language=en-US&page=1
+GET {{baseUrl}}genre/movie/list?language=ru-RU&page=1
 accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}

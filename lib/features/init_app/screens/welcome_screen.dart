@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/theme/app_assets_path.dart';
+import 'package:movie_app/core/theme/app_sizing.dart';
 import 'package:movie_app/core/theme/app_theme.dart';
 import 'package:movie_app/router/app_router.dart';
 import 'package:movie_app/utils/strings.dart';
@@ -22,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
         ),
         child: Container(
-          margin: const EdgeInsets.all(20),
+          margin: 20.marginAll,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -38,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              10.spaceH,
               Text(
                 welcomeContent,
                 style: Theme.of(
@@ -46,13 +47,11 @@ class WelcomeScreen extends StatelessWidget {
                 ).textTheme.bodyMedium?.copyWith(color: Colors.white),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 30),
+              30.spaceH,
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    context.pushRoute(const GenresScreenRoute());
-                  },
+                  onPressed: () => context.pushRoute(const GenresRoute()),
                   style: AppTheme.raisedButtonStyle,
                   child: const Text(getStarted),
                 ),

@@ -1,23 +1,23 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:movie_app/l10n/l10n.dart';
-// import 'package:movie_app/pages/home/bloc/home_bloc.dart';
-// import 'package:movie_app/pages/home/movies_see_all.dart';
-// import 'package:movie_app/pages/widgets/empty_view.dart';
-// import 'package:movie_app/pages/widgets/error_view.dart';
-// import 'package:movie_app/pages/widgets/movie_item_card.dart';
-// import 'package:movie_app/pages/widgets/no_connection_view.dart';
-// import 'package:movie_app/pages/widgets/progress_view.dart';
+// import 'package:movie_app/screens/home/bloc/home_bloc.dart';
+// import 'package:movie_app/screens/home/movies_see_all.dart';
+// import 'package:movie_app/screens/widgets/empty_view.dart';
+// import 'package:movie_app/screens/widgets/error_view.dart';
+// import 'package:movie_app/screens/widgets/movie_item_card.dart';
+// import 'package:movie_app/screens/widgets/no_connection_view.dart';
+// import 'package:movie_app/screens/widgets/progress_view.dart';
 // import 'package:movie_app/utils/status.dart';
-// import 'package:movies_data/movies_data.dart';
+// import 'package:movies_data/movies_data.dart' hide topRated;
 //
-// class PopularMovies extends StatelessWidget {
+// class TopRatedMovies extends StatelessWidget {
 //   final double size;
 //
-//   const PopularMovies({Key? key, required this.size}) : super(key: key);
+//   const TopRatedMovies({Key? key, required this.size}) : super(key: key);
 //
 //   void navigateToAllMovies(BuildContext context) {
-//     Navigator.of(context).push(MoviesSeeAll.route(MovieType.POPULAR));
+//     Navigator.of(context).push(MoviesSeeAll.route(MovieType.TOP_RATED));
 //   }
 //
 //   @override
@@ -30,8 +30,7 @@
 //           child: Row(
 //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //             children: [
-//               Text(context.l10n.popular,
-//                   style: Theme.of(context).textTheme.titleMedium),
+//               Text(context.l10n.topRated, style: Theme.of(context).textTheme.titleMedium),
 //               GestureDetector(
 //                 onTap: () {
 //                   navigateToAllMovies(context);
@@ -39,7 +38,8 @@
 //                 child: Text(
 //                   context.l10n.seeAll,
 //                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-//                       color: Theme.of(context).colorScheme.secondary),
+//                       color: Theme.of(context).colorScheme.secondary
+//                   ),
 //                 ),
 //               )
 //             ],
@@ -48,24 +48,23 @@
 //         SizedBox(
 //           height: size,
 //           child: BlocBuilder<HomeBloc, HomeState>(
-//             buildWhen: (prev, current) =>
-//                 prev.popularState != current.popularState,
-//             builder: (context, homeState) {
-//               return _buildComponents(
-//                 state: homeState.popularState,
-//                 retry: () {
-//                   context.read<HomeBloc>().add(FetchPopularMoviesEvent());
-//                 },
-//               );
-//             },
-//           ),
+//               buildWhen: (prev, current) =>
+//                   prev.topRatedState != current.topRatedState,
+//               builder: (context, homeState) {
+//                 return _buildComponents(
+//                   state: homeState.topRatedState,
+//                   retry: () {
+//                     context.read<HomeBloc>().add(FetchTopRatedMoviesEvent());
+//                   },
+//                 );
+//               }),
 //         )
 //       ],
 //     );
 //   }
 //
 //   Widget _buildComponents(
-//       {required PopularMoviesState state, required OnRetry retry}) {
+//       {required TopRatedMoviesState state, required OnRetry retry}) {
 //     switch (state.status) {
 //       case Status.success:
 //         return _MoviesView(movies: state.movies, itemSize: size);

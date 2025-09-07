@@ -1,11 +1,11 @@
 // import 'package:flutter/material.dart';
 // import 'package:iconly/iconly.dart';
 // import 'package:movie_app/l10n/l10n.dart';
-// import 'package:movie_app/pages/explore/explore_page.dart';
-// import 'package:movie_app/pages/home/home_page.dart';
-// import 'package:movie_app/pages/movies/movies_page.dart';
-// import 'package:movie_app/pages/mylist/my_list_page.dart';
-// import 'package:movie_app/pages/profile/profile_screen.dart';
+// import 'package:movie_app/screens/explore/explore_page.dart';
+// import 'package:movie_app/screens/home/home_page.dart';
+// import 'package:movie_app/screens/movies/movies_page.dart';
+// import 'package:movie_app/screens/mylist/my_list_page.dart';
+// import 'package:movie_app/screens/profile/profile_screen.dart';
 //
 // class MainPage extends StatefulWidget {
 //   const MainPage({super.key});

@@ -1,7 +1,7 @@
 // import 'package:cached_network_image/cached_network_image.dart';
 // import 'package:flutter/material.dart';
 // import 'package:iconly/iconly.dart';
-// import 'package:movie_app/pages/detail/detail_page.dart';
+// import 'package:movie_app/screens/detail/detail_page.dart';
 // import 'package:movies_data/movies_data.dart';
 //
 // class MovieItemCard extends StatelessWidget {
