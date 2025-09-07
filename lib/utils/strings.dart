@@ -1,12 +1,10 @@
-const welcomeText = 'Welcome to Mova';
+const welcomeText = 'Welcome to Movine';
 const welcomeContent =
     'The best movie streaming app of the century to make your days great!';
 const getStarted = 'Get Started';
 const topMovies = 'Top Movies';
-
 const choseFavoriteGenre =
     'Choose your interests and get the best movie recommendations. Don\'t worry, you can always change it later.';
-
 const skip = 'Skip';
 const continui = 'Continue';
 const seeAll = 'See all';

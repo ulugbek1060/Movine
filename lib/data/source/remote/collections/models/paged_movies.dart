@@ -13,6 +13,7 @@ class PagedMovies {
      this.totalResults,
      this.results,
   });
+
   factory PagedMovies.fromJson(Map<String, dynamic> json) => PagedMovies(
     page: json['page'],
     totalPages: json['total_pages'],

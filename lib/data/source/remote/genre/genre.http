@@ -13,8 +13,8 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 
-  /// Fetches Genre
-  /// genre/movie/list?language=en-US&page=1
+/// Fetches Genre
+/// genre/movie/list?language=en-US&page=1
 
-  /// Fetches Genre by id
-  /// genre/{id}/movies?language=en-US&page=1
+/// Fetches Genre by id
+/// genre/{id}/movies?language=en-US&page=1

@@ -39,7 +39,7 @@ Authorization: Bearer {{token}}
 /// person/{id}/similar?language=en-US&page=1
 
 /// Fetches Person by watch provider
-/// person/{id}/watch/providers?language=en-US&page=1
+/// person/{id}/watch/provider?language=en-US&page=1
 
 /// Fetches Person by rating
 /// person/{id}/rating?language=en-US&page=1

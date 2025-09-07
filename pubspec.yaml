@@ -6,46 +6,49 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
-  flutter: ">=1.17.0"
+  sdk: ^3.7.2
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_bloc: ^8.1.1
-  bloc: ^8.1.0
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
   equatable: ^2.0.5
-  flutter_svg: ^1.1.6
+  flutter_svg: ^2.2.1
   animated_text_kit: ^4.2.2
-  expansion_tile_card: ^2.0.0
+  expansion_tile_card: ^3.0.0
   shared_preferences: ^2.0.17
   iconly: ^1.0.1
-  infinite_scroll_pagination: ^3.2.0
-  bloc_concurrency: ^0.2.0
+  infinite_scroll_pagination: ^5.1.1
+  bloc_concurrency: ^0.3.0
   hive_flutter: ^1.1.0
   hive: ^2.2.3
   path_provider: ^2.0.12
   cached_network_image: ^3.2.3
   rxdart: ^0.27.7
-  youtube_player_flutter: ^8.1.2
+  youtube_player_flutter: ^9.1.2
   flutter_localizations:
     sdk: flutter
   intl: any
-  share_plus: ^6.3.1
-#  movies_data:
-#    path: packages/movies_data
-  internet_connection_checker: ^1.0.0+1
+  share_plus: ^10.1.4
+  internet_connection_checker: ^3.0.1
   injectable: ^2.5.0
   get_it: ^8.0.3
-  flutter_dotenv: ^5.1.0
+  flutter_dotenv: ^6.0.0
   freezed_annotation: ^2.3.2
   json_annotation: ^4.9.0
+  dio: ^5.9.0
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+  chuck_interceptor: ^2.2.1
+  auto_route: ^7.4.0
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
   injectable_generator: ^2.4.1
   flutter_native_splash: ^2.4.6
   flutter_launcher_icons: ^0.14.4
@@ -53,14 +56,23 @@ dev_dependencies:
   freezed: ^2.3.5
   json_serializable: ^6.7.1
   hive_generator: ^2.0.1
+  riverpod_generator: ^2.4.0
+  custom_lint: ^0.6.4
+  riverpod_lint: ^2.3.10
+  auto_route_generator: ^7.3.0
 
+dependency_overrides:
+#  win32: 3.1.2
 
 flutter:
   generate: true # Add this line
   uses-material-design: true
 
+
+
   assets:
     - assets/images/
+    - .env
 
   fonts:
     - family: Urbanist

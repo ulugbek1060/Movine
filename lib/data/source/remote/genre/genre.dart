@@ -1,21 +1,22 @@
-
-
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:injectable/injectable.dart';
+import 'package:movie_app/core/base/base_source.dart';
 
 import 'models/genre_model.dart';
 
-abstract class GenreRemoteSource {
+abstract class IGenreRemoteSource {
   /// Fetches Genre
   /// https://api.themoviedb.org/3/genre/movie/list?language=en-US&page=1
-  Future<GenreModel> getAllGenres({required String language});
+  Future<GenresModel> getAllGenres({required String language});
 }
 
-@Singleton(as: GenreRemoteSource)
-class GenreRemoteSourceImpl implements GenreRemoteSource {
+class GenreRemoteSourceImpl extends BaseSource implements IGenreRemoteSource {
+  GenreRemoteSourceImpl(super.dio);
+
   @override
-  Future<GenreModel> getAllGenres({required String language}) {
-    // TODO: implement getAllGenres
-    throw UnimplementedError();
-  }
+  Future<GenresModel> getAllGenres({required String language}) => makeRequest(
+      path: 'genre/movie/list',
+      method: 'GET',
+      queryParameters: {'language': language},
+      call: (data) => GenresModel.fromJson(data));
 }

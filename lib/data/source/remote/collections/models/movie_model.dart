@@ -8,7 +8,7 @@ class MovieModel with _$MovieModel {
   const factory MovieModel({
    @Default(false) bool? adult,
     @JsonKey(name: 'backdrop_path') String? backdropPath,
-    @JsonKey(name: 'genre_ids') List<int?>? genreIds,
+    @JsonKey(name: 'genre_ids') List<int>? genreIds,
     int? id,
     @JsonKey(name: 'original_language') String? originalLanguage,
     @JsonKey(name: 'original_title') String? originalTitle,

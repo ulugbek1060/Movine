@@ -71,59 +71,56 @@ accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
+/// Fetches Now Playing movies
+/// https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
 
+/// Fetches Popular movies
+/// https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
 
+/// Fetches Top Rated movies
+/// https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
 
-#  /// Fetches Now Playing movies
-#  /// https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
-#
-#  /// Fetches Popular movies
-#  /// https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
-#
-#  /// Fetches Top Rated movies
-#  /// https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
-#
-#  /// Fetches Upcoming movies
-#  /// https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1
-#
-#  /// Fetches Movie by type
-#  /// https://api.themoviedb.org/3/movie/{type}?language=en-US&page=1
-#
-#  /// Fetches Movie by id
-#  /// https://api.themoviedb.org/3/movie/{id}?language=en-US&page=1
-#
-#  /// Fetches Movie by query
-#  /// https://api.themoviedb.org/3/search/movie?language=en-US&page=1&query={query}
-#
-#  /// Fetches Movie by genre
-#  /// https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&with_genres={genre_id}
-#
-#  /// Fetches Movie by similar
-#  /// https://api.themoviedb.org/3/movie/{id}/similar?language=en-US&page=1
-#
-#  /// Fetches Movie by review
-#  /// https://api.themoviedb.org/3/movie/{id}/reviews?language=en-US&page=1
-#
-#  /// Fetches Movie by video
-#  /// https://api.themoviedb.org/3/movie/{id}/videos?language=en-US&page=1
-#
-#  /// Fetches Movie by credits
-#  /// https://api.themoviedb.org/3/movie/{id}/credits?language=en-US&page=1
-#
-#  /// Fetches Movie by recommendations
-#  /// https://api.themoviedb.org/3/movie/{id}/recommendations?language=en-US&page=1
-#
-#  /// Fetches Movie by watch provider
-#  /// https://api.themoviedb.org/3/movie/{id}/watch/providers?language=en-US&page=1
-#
-#  /// Fetches Movie by rating
-#  /// https://api.themoviedb.org/3/movie/{id}/rating?language=en-US&page=1
-#
-#  /// Fetches Movie images
-#  /// https://api.themoviedb.org/3/movie/{id}/images?language=en-US&page=1
-#
-#  /// Fetches Movie videos
-#  /// https://api.themoviedb.org/3/movie/{id}/videos?language=en-US&page=1
-#
-#  /// Fetches Movie lists
-#  /// https://api.themoviedb.org/3/movie/{id}/lists?language=en-US&page=1
+/// Fetches Upcoming movies
+/// https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1
+
+/// Fetches Movie by type
+/// https://api.themoviedb.org/3/movie/{type}?language=en-US&page=1
+
+/// Fetches Movie by id
+/// https://api.themoviedb.org/3/movie/{id}?language=en-US&page=1
+
+/// Fetches Movie by query
+/// https://api.themoviedb.org/3/search/movie?language=en-US&page=1&query={query}
+
+/// Fetches Movie by genre
+/// https://api.themoviedb.org/3/discover/movie?language=en-US&page=1&with_genres={genre_id}
+
+/// Fetches Movie by similar
+/// https://api.themoviedb.org/3/movie/{id}/similar?language=en-US&page=1
+
+/// Fetches Movie by review
+/// https://api.themoviedb.org/3/movie/{id}/reviews?language=en-US&page=1
+
+/// Fetches Movie by video
+/// https://api.themoviedb.org/3/movie/{id}/videos?language=en-US&page=1
+
+/// Fetches Movie by credits
+/// https://api.themoviedb.org/3/movie/{id}/credits?language=en-US&page=1
+
+/// Fetches Movie by recommendations
+/// https://api.themoviedb.org/3/movie/{id}/recommendations?language=en-US&page=1
+
+/// Fetches Movie by watch provider
+/// https://api.themoviedb.org/3/movie/{id}/watch/provider?language=en-US&page=1
+
+/// Fetches Movie by rating
+/// https://api.themoviedb.org/3/movie/{id}/rating?language=en-US&page=1
+
+/// Fetches Movie images
+/// https://api.themoviedb.org/3/movie/{id}/images?language=en-US&page=1
+
+/// Fetches Movie videos
+/// https://api.themoviedb.org/3/movie/{id}/videos?language=en-US&page=1
+
+/// Fetches Movie lists
+/// https://api.themoviedb.org/3/movie/{id}/lists?language=en-US&page=1
