@@ -1,4 +1,7 @@
 
+import 'package:flutter/cupertino.dart';
+
+@immutable
 class PaginationState<T> {
   final List<T> items;
   final int currentPage;

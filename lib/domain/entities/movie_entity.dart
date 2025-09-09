@@ -28,6 +28,12 @@ class MovieEntity extends Equatable {
     required this.voteCount,
   });
 
+  String get posterUrl => 'https://image.tmdb.org/t/p/w500/$posterPath';
+  String get backdropUrl => 'https://image.tmdb.org/t/p/w500/$backdropPath';
+
+  // reformat it to 2 decimal places
+  String get votes => voteAverage.toStringAsFixed(1);
+
   @override
   List<Object?> get props => [
         id,
