@@ -5,9 +5,9 @@ import 'package:movie_app/core/theme/app_sizing.dart';
 import 'package:movie_app/domain/entities/genre_entity.dart';
 import 'package:movie_app/features/init_app/provider/genre_provider.dart';
 import 'package:movie_app/pages/widgets/progress_view.dart';
+import 'package:movie_app/router/app_router.dart';
 import 'package:movie_app/utils/strings.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'genre_item_widget.dart';
 
 @RoutePage()
@@ -89,7 +89,10 @@ class _SelectionView extends ConsumerWidget {
               12.spaceW,
               Expanded(
                 child: ElevatedButton(
-                  onPressed: () => ref.read(genreProvider.notifier).setGenres(),
+                  onPressed: () {
+                    ref.read(genreProvider.notifier).setGenres();
+                    context.pushRoute(HomeRoute());
+                  },
                   child: const Text(continui),
                 ),
               ),

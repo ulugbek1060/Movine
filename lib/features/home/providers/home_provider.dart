@@ -18,20 +18,25 @@ IHomeRepository homeRepository(HomeRepositoryRef ref) => HomeRepository(
 
 enum MovieType { nowPlaying, popular, topRated, upcoming }
 
+/// home controller
 @riverpod
-class NowPlayingMovies extends _$NowPlayingMovies {
-
+class MovieListProvider extends _$MovieListProvider {
   @override
-  Future<PaginationState<MovieEntity>> build(MovieType type) async =>
-      PaginationState(
-        items: [],
-        currentPage: 0,
-        hasReachedMax: false,
-        isLoading: false,
-      );
+  Future<PaginationState<MovieEntity>> build(MovieType type) async {
+    // Initialize with empty state, don't set state = AsyncValue.loading() here
+    final initialState = PaginationState<MovieEntity>(
+      currentPage: 0,
+      hasReachedMax: false,
+      isLoading: false,
+      items: [],
+    );
+
+    // Load first page immediately
+
+    return initialState;
+  }
 
   Future<void> fetchNextPage() async {
-
     if (state.value == null) return;
     final value = state.value!;
     if (value.hasReachedMax || value.isLoading) return;
@@ -86,3 +91,20 @@ class NowPlayingMovies extends _$NowPlayingMovies {
     await fetchNextPage();
   }
 }
+
+@riverpod
+Future<PaginationState<MovieEntity>> nowPlayingMovies(
+  NowPlayingMoviesRef ref,
+) => ref.watch(movieListProviderProvider(MovieType.nowPlaying).future);
+
+@riverpod
+Future<PaginationState<MovieEntity>> popularMovies(PopularMoviesRef ref) =>
+    ref.watch(movieListProviderProvider(MovieType.popular).future);
+
+@riverpod
+Future<PaginationState<MovieEntity>> topRatedMovies(TopRatedMoviesRef ref) =>
+    ref.watch(movieListProviderProvider(MovieType.topRated).future);
+
+@riverpod
+Future<PaginationState<MovieEntity>> upcomingMovies(UpcomingMoviesRef ref) =>
+    ref.watch(movieListProviderProvider(MovieType.upcoming).future);

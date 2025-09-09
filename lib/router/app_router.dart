@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:movie_app/features/home/screens/home_screen.dart';
 import 'package:movie_app/features/init_app/screens/genres_screen.dart';
 import 'package:movie_app/features/init_app/screens/welcome_screen.dart';
 
@@ -11,6 +12,7 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
     AutoRoute(page: WelcomeRoute.page, initial: true),
     AutoRoute(page: GenresRoute.page),
+    AutoRoute(page: HomeRoute.page),
   ];
 }
 

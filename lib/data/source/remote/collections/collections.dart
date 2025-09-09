@@ -1,9 +1,7 @@
 import 'package:movie_app/core/base/base_source.dart';
 import 'package:movie_app/data/source/remote/collections/models/video_model.dart';
-
 import 'models/detail_model.dart';
 import 'models/paged_movies.dart';
-import 'package:injectable/injectable.dart';
 
 abstract class MoviesRemoteSource {
   /// Fetches Now Playing movies
@@ -95,7 +93,6 @@ abstract class MoviesRemoteSource {
       {required String movieId, required String language});
 }
 
-@Singleton(as: MoviesRemoteSource)
 class MoviesRemoteSourceImpl extends BaseSource implements MoviesRemoteSource {
   MoviesRemoteSourceImpl(super.dio);
 

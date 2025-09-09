@@ -1,4 +1,3 @@
-import 'package:injectable/injectable.dart';
 import 'package:movie_app/core/base/base_source.dart';
 import 'package:movie_app/data/source/remote/people/models/paged_people_model.dart';
 import 'package:movie_app/data/source/remote/people/models/person_detail_model.dart';
@@ -45,7 +44,6 @@ abstract class PeopleRemoteSource {
   /// person/{id}/rating?language=en-US&page=1
 }
 
-@Singleton(as: PeopleRemoteSource)
 class PeopleRemoteSourceImpl extends BaseSource implements PeopleRemoteSource {
   PeopleRemoteSourceImpl(super.dio);
 

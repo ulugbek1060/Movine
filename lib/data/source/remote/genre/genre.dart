@@ -1,5 +1,3 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:injectable/injectable.dart';
 import 'package:movie_app/core/base/base_source.dart';
 
 import 'models/genre_model.dart';

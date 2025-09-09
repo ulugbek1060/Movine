@@ -21,7 +21,75 @@ final homeRepositoryProvider = AutoDisposeProvider<IHomeRepository>.internal(
 );
 
 typedef HomeRepositoryRef = AutoDisposeProviderRef<IHomeRepository>;
-String _$nowPlayingMoviesHash() => r'1ace0b11cfa93608da5bc09a9cb8dce13a3bd548';
+String _$nowPlayingMoviesHash() => r'98edc6db7bdfc70f2dd88d23563778742fed75e4';
+
+/// See also [nowPlayingMovies].
+@ProviderFor(nowPlayingMovies)
+final nowPlayingMoviesProvider =
+    AutoDisposeFutureProvider<PaginationState<MovieEntity>>.internal(
+  nowPlayingMovies,
+  name: r'nowPlayingMoviesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$nowPlayingMoviesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef NowPlayingMoviesRef
+    = AutoDisposeFutureProviderRef<PaginationState<MovieEntity>>;
+String _$popularMoviesHash() => r'300ae4bcef7b82041b55c4ee89c2929ec85a13eb';
+
+/// See also [popularMovies].
+@ProviderFor(popularMovies)
+final popularMoviesProvider =
+    AutoDisposeFutureProvider<PaginationState<MovieEntity>>.internal(
+  popularMovies,
+  name: r'popularMoviesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$popularMoviesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef PopularMoviesRef
+    = AutoDisposeFutureProviderRef<PaginationState<MovieEntity>>;
+String _$topRatedMoviesHash() => r'89ed8bb458eb0f1003c689f96fd2f014d165188b';
+
+/// See also [topRatedMovies].
+@ProviderFor(topRatedMovies)
+final topRatedMoviesProvider =
+    AutoDisposeFutureProvider<PaginationState<MovieEntity>>.internal(
+  topRatedMovies,
+  name: r'topRatedMoviesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$topRatedMoviesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef TopRatedMoviesRef
+    = AutoDisposeFutureProviderRef<PaginationState<MovieEntity>>;
+String _$upcomingMoviesHash() => r'1640f86240311788cf99b2b3308906909467f343';
+
+/// See also [upcomingMovies].
+@ProviderFor(upcomingMovies)
+final upcomingMoviesProvider =
+    AutoDisposeFutureProvider<PaginationState<MovieEntity>>.internal(
+  upcomingMovies,
+  name: r'upcomingMoviesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$upcomingMoviesHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef UpcomingMoviesRef
+    = AutoDisposeFutureProviderRef<PaginationState<MovieEntity>>;
+String _$movieListProviderHash() => r'fbc2c1fb66ce29d8f05843216a07de2716af44fa';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -44,7 +112,7 @@ class _SystemHash {
   }
 }
 
-abstract class _$NowPlayingMovies
+abstract class _$MovieListProvider
     extends BuildlessAutoDisposeAsyncNotifier<PaginationState<MovieEntity>> {
   late final MovieType type;
 
@@ -53,28 +121,36 @@ abstract class _$NowPlayingMovies
   );
 }
 
-/// See also [NowPlayingMovies].
-@ProviderFor(NowPlayingMovies)
-const nowPlayingMoviesProvider = NowPlayingMoviesFamily();
+/// home controller
+///
+/// Copied from [MovieListProvider].
+@ProviderFor(MovieListProvider)
+const movieListProviderProvider = MovieListProviderFamily();
 
-/// See also [NowPlayingMovies].
-class NowPlayingMoviesFamily
+/// home controller
+///
+/// Copied from [MovieListProvider].
+class MovieListProviderFamily
     extends Family<AsyncValue<PaginationState<MovieEntity>>> {
-  /// See also [NowPlayingMovies].
-  const NowPlayingMoviesFamily();
+  /// home controller
+  ///
+  /// Copied from [MovieListProvider].
+  const MovieListProviderFamily();
 
-  /// See also [NowPlayingMovies].
-  NowPlayingMoviesProvider call(
+  /// home controller
+  ///
+  /// Copied from [MovieListProvider].
+  MovieListProviderProvider call(
     MovieType type,
   ) {
-    return NowPlayingMoviesProvider(
+    return MovieListProviderProvider(
       type,
     );
   }
 
   @override
-  NowPlayingMoviesProvider getProviderOverride(
-    covariant NowPlayingMoviesProvider provider,
+  MovieListProviderProvider getProviderOverride(
+    covariant MovieListProviderProvider provider,
   ) {
     return call(
       provider.type,
@@ -93,30 +169,34 @@ class NowPlayingMoviesFamily
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'nowPlayingMoviesProvider';
+  String? get name => r'movieListProviderProvider';
 }
 
-/// See also [NowPlayingMovies].
-class NowPlayingMoviesProvider extends AutoDisposeAsyncNotifierProviderImpl<
-    NowPlayingMovies, PaginationState<MovieEntity>> {
-  /// See also [NowPlayingMovies].
-  NowPlayingMoviesProvider(
+/// home controller
+///
+/// Copied from [MovieListProvider].
+class MovieListProviderProvider extends AutoDisposeAsyncNotifierProviderImpl<
+    MovieListProvider, PaginationState<MovieEntity>> {
+  /// home controller
+  ///
+  /// Copied from [MovieListProvider].
+  MovieListProviderProvider(
     MovieType type,
   ) : this._internal(
-          () => NowPlayingMovies()..type = type,
-          from: nowPlayingMoviesProvider,
-          name: r'nowPlayingMoviesProvider',
+          () => MovieListProvider()..type = type,
+          from: movieListProviderProvider,
+          name: r'movieListProviderProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$nowPlayingMoviesHash,
-          dependencies: NowPlayingMoviesFamily._dependencies,
+                  : _$movieListProviderHash,
+          dependencies: MovieListProviderFamily._dependencies,
           allTransitiveDependencies:
-              NowPlayingMoviesFamily._allTransitiveDependencies,
+              MovieListProviderFamily._allTransitiveDependencies,
           type: type,
         );
 
-  NowPlayingMoviesProvider._internal(
+  MovieListProviderProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -130,7 +210,7 @@ class NowPlayingMoviesProvider extends AutoDisposeAsyncNotifierProviderImpl<
 
   @override
   FutureOr<PaginationState<MovieEntity>> runNotifierBuild(
-    covariant NowPlayingMovies notifier,
+    covariant MovieListProvider notifier,
   ) {
     return notifier.build(
       type,
@@ -138,10 +218,10 @@ class NowPlayingMoviesProvider extends AutoDisposeAsyncNotifierProviderImpl<
   }
 
   @override
-  Override overrideWith(NowPlayingMovies Function() create) {
+  Override overrideWith(MovieListProvider Function() create) {
     return ProviderOverride(
       origin: this,
-      override: NowPlayingMoviesProvider._internal(
+      override: MovieListProviderProvider._internal(
         () => create()..type = type,
         from: from,
         name: null,
@@ -154,14 +234,14 @@ class NowPlayingMoviesProvider extends AutoDisposeAsyncNotifierProviderImpl<
   }
 
   @override
-  AutoDisposeAsyncNotifierProviderElement<NowPlayingMovies,
+  AutoDisposeAsyncNotifierProviderElement<MovieListProvider,
       PaginationState<MovieEntity>> createElement() {
-    return _NowPlayingMoviesProviderElement(this);
+    return _MovieListProviderProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is NowPlayingMoviesProvider && other.type == type;
+    return other is MovieListProviderProvider && other.type == type;
   }
 
   @override
@@ -173,19 +253,19 @@ class NowPlayingMoviesProvider extends AutoDisposeAsyncNotifierProviderImpl<
   }
 }
 
-mixin NowPlayingMoviesRef
+mixin MovieListProviderRef
     on AutoDisposeAsyncNotifierProviderRef<PaginationState<MovieEntity>> {
   /// The parameter `type` of this provider.
   MovieType get type;
 }
 
-class _NowPlayingMoviesProviderElement
-    extends AutoDisposeAsyncNotifierProviderElement<NowPlayingMovies,
-        PaginationState<MovieEntity>> with NowPlayingMoviesRef {
-  _NowPlayingMoviesProviderElement(super.provider);
+class _MovieListProviderProviderElement
+    extends AutoDisposeAsyncNotifierProviderElement<MovieListProvider,
+        PaginationState<MovieEntity>> with MovieListProviderRef {
+  _MovieListProviderProviderElement(super.provider);
 
   @override
-  MovieType get type => (origin as NowPlayingMoviesProvider).type;
+  MovieType get type => (origin as MovieListProviderProvider).type;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

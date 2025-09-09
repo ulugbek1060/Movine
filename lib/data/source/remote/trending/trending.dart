@@ -1,6 +1,4 @@
-import 'package:injectable/injectable.dart';
 import 'package:movie_app/core/base/base_source.dart';
-
 import 'models/paged_trending_movies_model.dart';
 import 'models/paged_trending_persons_model.dart';
 
@@ -33,7 +31,6 @@ abstract class TrendingRemoteSource {
   });
 }
 
-@Singleton(as: TrendingRemoteSource)
 class TrendingRemoteSourceImpl extends BaseSource
     implements TrendingRemoteSource {
   TrendingRemoteSourceImpl(super.dio);
