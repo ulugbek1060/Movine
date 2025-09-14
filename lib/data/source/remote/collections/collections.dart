@@ -6,57 +6,77 @@ import 'models/paged_movies.dart';
 abstract class MoviesRemoteSource {
   /// Fetches Now Playing movies
   /// movie/now_playing?language=en-US&page=1
-  Future<PagedMovies> getNowPlayingMovies(
-      {required String language, required int page});
+  Future<PagedMovies> getNowPlayingMovies({
+    required String language,
+    required int page,
+  });
 
   /// Fetches Popular movies
   /// movie/popular?language=en-US&page=1
-  Future<PagedMovies> getPopularMovies(
-      {required String language, required int page});
+  Future<PagedMovies> getPopularMovies({
+    required String language,
+    required int page,
+  });
 
   /// Fetches Top Rated movies
   /// movie/top_rated?language=en-US&page=1
-  Future<PagedMovies> getTopRatedMovies(
-      {required String language, required int page});
+  Future<PagedMovies> getTopRatedMovies({
+    required String language,
+    required int page,
+  });
 
   /// Fetches Upcoming movies
   /// movie/upcoming?language=en-US&page=1
-  Future<PagedMovies> getUpcomingMovies(
-      {required String language, required int page});
+  Future<PagedMovies> getUpcomingMovies({
+    required String language,
+    required int page,
+  });
 
   /// Fetches Movie by type
   /// movie/{type}?language=en-US&page=1
 
   /// Fetches Movie by genre
   /// movie/{genre_id}/movies?language=en-US&page=1
-  Future<PagedMovies> getMoviesByGenreId(
-      {required String genreId, required int page, required String language});
+  Future<PagedMovies> getMoviesByGenreId({
+    required String genreId,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie by id
   /// movie/{id}?language=en-US&page=1
 
   /// Fetches Movie by query
   /// search/movie?include_adult=false&language=en-US&page=1&query={query}
-  Future<PagedMovies> getMoviesByQuery(
-      {required String query,
-      required bool includeAdults,
-      required int page,
-      required String language});
+  /// "https://api.themoviedb.org/3/search/movie?query=safd&include_adult=false&language=en-US&primary_release_year=2019&page=1&region=%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD&year=2020"
+  Future<PagedMovies> getMoviesByQuery({
+    required String query,
+    required bool includeAdults,
+    String? primaryReleaseDate,
+    String? year,
+    String? region,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie by genre
   /// discover/movie?language=en-US&page=1&with_genres={genre_id}
   /// discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc
-  Future<PagedMovies> getMoviesByGenre(
-      {required bool includeVideo,
-      required bool includeAdult,
-      required String sortBy,
-      required int page,
-      required String language});
+  Future<PagedMovies> getMoviesByGenre({
+    required bool includeVideo,
+    required bool includeAdult,
+    required String sortBy,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie by similar
   /// movie/{id}/similar?language=en-US&page=1
-  Future<PagedMovies> getSimilarMovies(
-      {required String movieId, required int page, required String language});
+  Future<PagedMovies> getSimilarMovies({
+    required String movieId,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie by review
   /// movie/{id}/reviews?language=en-US&page=1
@@ -70,8 +90,11 @@ abstract class MoviesRemoteSource {
 
   /// Fetches Movie by recommendations
   /// movie/{id}/recommendations?language=en-US&page=1
-  Future<PagedMovies> getRecommendationsByMovieId(
-      {required String movieId, required int page, required String language});
+  Future<PagedMovies> getRecommendationsByMovieId({
+    required String movieId,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie by watch provider
   /// movie/{id}/watch/provider?language=en-US&page=1
@@ -84,171 +107,175 @@ abstract class MoviesRemoteSource {
 
   /// Fetches Movie lists
   /// movie/{id}/lists?language=en-US&page=1
-  Future<PagedMovies> getListsByMovieId(
-      {required String movieId, required int page, required String language});
+  Future<PagedMovies> getListsByMovieId({
+    required String movieId,
+    required int page,
+    required String language,
+  });
 
   /// Fetches Movie Details
   /// movie/movie_id?language=en-US
-  Future<DetailModel> getMovieDetails(
-      {required String movieId, required String language});
+  Future<DetailModel> getMovieDetails({
+    required String movieId,
+    required String language,
+  });
 }
 
 class MoviesRemoteSourceImpl extends BaseSource implements MoviesRemoteSource {
   MoviesRemoteSourceImpl(super.dio);
 
   @override
-  Future<PagedMovies> getListsByMovieId(
-          {required String movieId,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'movie/$movieId/lists',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getListsByMovieId({
+    required String movieId,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'movie/$movieId/lists',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<DetailModel> getMovieDetails(
-          {required String movieId, required String language}) =>
-      makeRequest(
-          path: 'movie/$movieId',
-          method: 'GET',
-          queryParameters: {'language': language},
-          call: (data) => DetailModel.fromJson(data));
+  Future<DetailModel> getMovieDetails({
+    required String movieId,
+    required String language,
+  }) => makeRequest(
+    path: 'movie/$movieId',
+    method: 'GET',
+    queryParameters: {'language': language},
+    call: (data) => DetailModel.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getMoviesByGenre(
-          {required bool includeVideo,
-          required bool includeAdult,
-          required String sortBy,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'discover/movie',
-          method: 'GET',
-          queryParameters: {
-            'include_adult': includeAdult,
-            'include_video': includeVideo,
-            'language': language,
-            'page': page,
-            'sort_by': sortBy,
-          },
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getMoviesByGenre({
+    required bool includeVideo,
+    required bool includeAdult,
+    required String sortBy,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'discover/movie',
+    method: 'GET',
+    queryParameters: {
+      'include_adult': includeAdult,
+      'include_video': includeVideo,
+      'language': language,
+      'page': page,
+      'sort_by': sortBy,
+    },
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getMoviesByQuery(
-          {required String query,
-          required bool includeAdults,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'search/movie',
-          method: 'GET',
-          queryParameters: {
-            'include_adult': includeAdults,
-            'language': language,
-            'page': page,
-            'query': query,
-          },
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getMoviesByQuery({
+    required String query,
+    required bool includeAdults,
+    String? primaryReleaseDate,
+    String? year,
+    String? region,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'search/movie',
+    method: 'GET',
+    queryParameters: {
+      'include_adult': includeAdults,
+      'primary_release_date': primaryReleaseDate,
+      'year': year,
+      'region': region,
+      'language': language,
+      'page': page,
+      'query': query,
+    },
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getNowPlayingMovies(
-          {required String language, required int page}) =>
-      makeRequest(
-          path: 'movie/now_playing',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getNowPlayingMovies({
+    required String language,
+    required int page,
+  }) => makeRequest(
+    path: 'movie/now_playing',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getPopularMovies(
-          {required String language, required int page}) =>
-      makeRequest(
-          path: 'movie/popular',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getPopularMovies({
+    required String language,
+    required int page,
+  }) => makeRequest(
+    path: 'movie/popular',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getRecommendationsByMovieId(
-          {required String movieId,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'movie/$movieId/recommendations',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getRecommendationsByMovieId({
+    required String movieId,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'movie/$movieId/recommendations',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getSimilarMovies(
-          {required String movieId,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'movie/$movieId/similar',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getSimilarMovies({
+    required String movieId,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'movie/$movieId/similar',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getTopRatedMovies(
-          {required String language, required int page}) =>
-      makeRequest(
-          path: 'movie/top_rated',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getTopRatedMovies({
+    required String language,
+    required int page,
+  }) => makeRequest(
+    path: 'movie/top_rated',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
-  Future<PagedMovies> getUpcomingMovies(
-          {required String language, required int page}) =>
-      makeRequest(
-          path: 'movie/upcoming',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getUpcomingMovies({
+    required String language,
+    required int page,
+  }) => makeRequest(
+    path: 'movie/upcoming',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 
   @override
   Future<VideoModel> getVideosByMovieId({required String movieId}) =>
       makeRequest(
-          path: 'movie/$movieId/videos',
-          method: 'GET',
-          call: (data) => VideoModel.fromJson(data));
+        path: 'movie/$movieId/videos',
+        method: 'GET',
+        call: (data) => VideoModel.fromJson(data),
+      );
 
   @override
-  Future<PagedMovies> getMoviesByGenreId(
-          {required String genreId,
-          required int page,
-          required String language}) =>
-      makeRequest(
-          path: 'genre/movie/list',
-          queryParameters: {
-            'language': language,
-            'page': page,
-          },
-          method: 'GET',
-          call: (data) => PagedMovies.fromJson(data));
+  Future<PagedMovies> getMoviesByGenreId({
+    required String genreId,
+    required int page,
+    required String language,
+  }) => makeRequest(
+    path: 'genre/movie/list',
+    queryParameters: {'language': language, 'page': page},
+    method: 'GET',
+    call: (data) => PagedMovies.fromJson(data),
+  );
 }

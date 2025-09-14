@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:movie_app/core/presentation/default_views.dart';
 import 'package:movie_app/core/theme/app_sizing.dart';
-import 'package:movie_app/domain/entities/movie_entity.dart';
 
 class MovieItemCard extends StatelessWidget {
   const MovieItemCard({

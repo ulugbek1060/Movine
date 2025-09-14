@@ -31,4 +31,8 @@ extension AppSizing on num {
     topLeft: Radius.circular(w),
     topRight: Radius.circular(w),
   );
+  BorderRadius get borderRadiusBottom => BorderRadius.only(
+    bottomLeft: Radius.circular(w),
+    bottomRight: Radius.circular(w),
+  );
 }

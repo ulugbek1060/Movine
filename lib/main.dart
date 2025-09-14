@@ -56,7 +56,7 @@ class _AppViewState extends State<AppView> {
           theme: AppTheme.lightThemeData,
           darkTheme: AppTheme.darkThemeData,
           // themeMode: state.darkTheme ? ThemeMode.dark : ThemeMode.light,
-          themeMode: ThemeMode.light,
+          themeMode: ThemeMode.system,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           // locale: Locale(state.langCode),

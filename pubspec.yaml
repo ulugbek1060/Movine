@@ -17,7 +17,6 @@ dependencies:
   animated_text_kit: ^4.2.2
   expansion_tile_card: ^3.0.0
   shared_preferences: ^2.0.17
-  iconly: ^1.0.1
   infinite_scroll_pagination: ^5.1.1
   bloc_concurrency: ^0.3.0
   hive_flutter: ^1.1.0
@@ -40,6 +39,7 @@ dependencies:
   chuck_interceptor: ^2.2.1
   auto_route: ^7.4.0
   flutter_screenutil: ^5.9.3
+  iconly: ^1.0.1
 
 dev_dependencies:
   flutter_test:

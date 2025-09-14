@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    ExploreRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ExploreScreen(),
+      );
+    },
     GenresRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -27,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
+    ShellRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ShellScreen(),
+      );
+    },
     WelcomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -34,6 +46,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [ExploreScreen]
+class ExploreRoute extends PageRouteInfo<void> {
+  const ExploreRoute({List<PageRouteInfo>? children})
+      : super(
+          ExploreRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ExploreRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -60,6 +86,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ShellScreen]
+class ShellRoute extends PageRouteInfo<void> {
+  const ShellRoute({List<PageRouteInfo>? children})
+      : super(
+          ShellRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ShellRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
