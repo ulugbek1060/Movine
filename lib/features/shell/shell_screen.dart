@@ -15,70 +15,62 @@ class ShellScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: const [HomeRoute(), GenresRoute()],
+      routes: const [HomeRoute(), ExploreRoute()],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
-          body: Stack(
-            children: [
-              Positioned(top: 0, bottom: 0, left: 0, right: 0, child: child),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: BlurContainer(
-                  color: Theme.of(context).colorScheme.surface,
-                  blurStrength: 10.0,
-                  borderRadius: 16.borderRadiusTop,
-                  child: Theme(
-                    data: ThemeData(
-                      splashFactory: NoSplash.splashFactory,
-                      highlightColor: Colors.transparent,
-                      primarySwatch: AppColors.primarySwatch,
-                      colorScheme: Theme.of(context).colorScheme,
-                      textTheme: Theme.of(context).textTheme.copyWith(
-                        bodySmall: const TextStyle(color: Colors.black),
-                      ),
-                      iconTheme: Theme.of(context).iconTheme,
-                    ),
-                    child: BottomNavigationBar(
-                      elevation: 0,
-                      type: BottomNavigationBarType.fixed,
-                      backgroundColor: Colors.transparent,
-                      currentIndex: tabsRouter.activeIndex,
-                      onTap: tabsRouter.setActiveIndex,
-                      items: [
-                        BottomNavigationBarItem(
-                          icon: Icon(i.IconlyLight.home),
-                          activeIcon: Icon(i.IconlyBold.home),
-                          label: context.l10n.home,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: Icon(i.IconlyLight.discovery),
-                          activeIcon: Icon(i.IconlyBold.discovery),
-                          label: context.l10n.explore,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: Icon(i.IconlyLight.play),
-                          activeIcon: Icon(i.IconlyBold.play),
-                          label: context.l10n.movies,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: Icon(i.IconlyLight.bookmark),
-                          activeIcon: Icon(i.IconlyBold.bookmark),
-                          label: context.l10n.myList,
-                        ),
-                        BottomNavigationBarItem(
-                          icon: Icon(i.IconlyLight.profile),
-                          activeIcon: Icon(i.IconlyBold.profile),
-                          label: context.l10n.profile,
-                        ),
-                      ],
-                    ),
-                  ),
+          extendBody: true,
+          body: child,
+          bottomNavigationBar: BlurContainer(
+            color: Theme.of(context).colorScheme.surface,
+            blurStrength: 10.0,
+            borderRadius: 16.borderRadiusTop,
+            child: Theme(
+              data: ThemeData(
+                splashFactory: NoSplash.splashFactory,
+                highlightColor: Colors.transparent,
+                primarySwatch: AppColors.primarySwatch,
+                colorScheme: Theme.of(context).colorScheme,
+                textTheme: Theme.of(context).textTheme.copyWith(
+                  bodySmall: const TextStyle(color: Colors.black),
                 ),
+                iconTheme: Theme.of(context).iconTheme,
               ),
-            ],
+              child: BottomNavigationBar(
+                elevation: 0,
+                type: BottomNavigationBarType.fixed,
+                backgroundColor: Colors.transparent,
+                currentIndex: tabsRouter.activeIndex,
+                onTap: tabsRouter.setActiveIndex,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Icon(i.IconlyLight.home),
+                    activeIcon: Icon(i.IconlyBold.home),
+                    label: context.l10n.home,
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(i.IconlyLight.discovery),
+                    activeIcon: Icon(i.IconlyBold.discovery),
+                    label: context.l10n.explore,
+                  ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(i.IconlyLight.play),
+                  //   activeIcon: Icon(i.IconlyBold.play),
+                  //   label: context.l10n.movies,
+                  // ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(i.IconlyLight.bookmark),
+                  //   activeIcon: Icon(i.IconlyBold.bookmark),
+                  //   label: context.l10n.myList,
+                  // ),
+                  // BottomNavigationBarItem(
+                  //   icon: Icon(i.IconlyLight.profile),
+                  //   activeIcon: Icon(i.IconlyBold.profile),
+                  //   label: context.l10n.profile,
+                  // ),
+                ],
+              ),
+            ),
           ),
         );
       },

@@ -133,6 +133,7 @@ class AppSearchBar extends ConsumerWidget {
       pinned: false,
       floating: true,
       snap: true,
+      automaticallyImplyLeading: false,
       expandedHeight: 70,
       flexibleSpace: FlexibleSpaceBar(
         background: Padding(
@@ -167,7 +168,13 @@ class AppSearchBar extends ConsumerWidget {
                   onSubmitted: (value) {
                     ref.read(filterStateProvider.notifier).state = FilterData(
                       query: value,
+                    );  
+                  },
+                  onChanged: (value){
+                    ref.read(filterStateProvider.notifier).state = FilterData(
+                      query: value,
                     );
+                    ref.read(exploreProvider.notifier).firstLoad();
                   },
                   textInputAction: TextInputAction.search,
                 ),

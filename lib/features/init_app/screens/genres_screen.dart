@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/presentation/default_views.dart';
-import 'package:movie_app/core/presentation/shell_conteiner_widget.dart';
 import 'package:movie_app/core/theme/app_sizing.dart';
 import 'package:movie_app/domain/entities/genre_entity.dart';
 import 'package:movie_app/features/init_app/provider/genre_provider.dart';

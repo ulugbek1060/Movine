@@ -9,15 +9,13 @@ part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends _$AppRouter {
-
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: WelcomeRoute.page),
+    AutoRoute(page: WelcomeRoute.page, initial: true),
     AutoRoute(page: GenresRoute.page),
 
     AutoRoute(
       page: ShellRoute.page,
-      initial: true,
       children: [
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: ExploreRoute.page),
