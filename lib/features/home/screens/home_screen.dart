@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/presentation/shell_conteiner_widget.dart';
 import 'package:movie_app/core/theme/app_sizing.dart';
 import 'package:movie_app/features/home/providers/home_provider.dart';
 import 'package:movie_app/features/home/screens/widgets/now_playing_movies.dart';
@@ -28,7 +27,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final width = size.width;
-    final height = size.height;
     return RefreshIndicator(
       color: Theme.of(context).colorScheme.onPrimary,
       onRefresh: _fetchMovies,

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/home/providers/home_provider.dart';
 import 'package:movie_app/features/home/screens/widgets/horizontal_movies_list_widget.dart';
-import 'package:movie_app/features/home/screens/widgets/movie_item_card.dart';
 import 'package:movie_app/l10n/l10n.dart';
 import 'package:movie_app/pages/widgets/progress_view.dart';
-import 'package:movie_app/utils/status.dart';
 
 class TopRatedMovies extends StatelessWidget {
   final double width;

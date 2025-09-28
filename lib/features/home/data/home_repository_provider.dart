@@ -7,6 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_repository_provider.g.dart';
 
+
 @riverpod
 IHomeRepository homeRepository(HomeRepositoryRef ref) {
   return HomeRepository(

@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:movie_app/core/extensions/lang.dart';
 import 'package:movie_app/data/source/remote/collections/models/paged_movies.dart';
 import 'package:movie_app/domain/entities/movie_entity.dart';
 
@@ -15,6 +14,32 @@ class PagedMoviesEntity extends Equatable {
     this.totalResults,
     required this.results,
   });
+
+  // empty constructor
+  const PagedMoviesEntity.empty()
+      : page = null,
+        totalPages = null,
+        totalResults = null,
+        results = const [];
+
+  PagedMoviesEntity copyWith({
+    int? page,
+    int? totalPages,
+    int? totalResults,
+    List<MovieEntity>? results,
+  }) {
+    return PagedMoviesEntity(
+      page: page ?? this.page,
+      totalPages: totalPages ?? this.totalPages,
+      totalResults: totalResults ?? this.totalResults,
+      results: results ?? this.results,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'PagedMoviesEntity(page: $page, totalPages: $totalPages, totalResults: $totalResults, results: $results)';
+  }
 
   @override
   List<Object?> get props => [
